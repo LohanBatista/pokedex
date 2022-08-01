@@ -1,16 +1,32 @@
 module.exports = {
+  env: {
+    browser: true,
+    es6: true,
+    node: true,
+  },
   root: true,
-  extends: '@react-native-community',
+  extends: [
+    '@react-native-community',
+    'eslint:recommended',
+    'plugin:react/recommended',
+    'plugin:@typescript-eslint/eslint-recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:prettier/recommended',
+  ],
   parser: '@typescript-eslint/parser',
-  plugins: ['@typescript-eslint'],
-  overrides: [
-    {
-      files: ['*.ts', '*.tsx'],
-      rules: {
-        '@typescript-eslint/no-shadow': ['error'],
-        'no-shadow': 'off',
-        'no-undef': 'off',
+  plugins: ['@typescript-eslint', 'prettier'],
+  rules: {
+    'no-extend-native': 'off',
+    'react/react-in-jsx-scope': 'off',
+    'prettier/prettier': ['error', {endOfLine: 'auto'}, {usePrettierrc: true}],
+    '@typescript-eslint/no-non-null-assertion': 'off',
+  },
+  settings: {
+    'import/resolver': {
+      'babel-plugin-root-import': {
+        rootPathPrefix: '~',
+        rootPathSuffix: 'src',
       },
     },
-  ],
+  },
 };
