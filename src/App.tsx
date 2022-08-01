@@ -19,6 +19,10 @@ import WelcomePage from './pages/Welcome';
 const App = () => {
   return (
     <ThemeProvider theme={theme}>
+      <StatusBar
+        barStyle="dark-content"
+        backgroundColor={theme.colors.background.modal}
+      />
       <WelcomePage />
     </ThemeProvider>
   );
