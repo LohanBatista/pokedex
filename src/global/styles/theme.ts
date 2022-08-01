@@ -49,6 +49,7 @@ export default {
     },
     text: {
       white: '#ffffff',
+      dark: 'rgba(23, 23, 27, 0.6)',
     },
   },
 };
