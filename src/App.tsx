@@ -10,20 +10,13 @@
 
 import React from 'react';
 import {SafeAreaView, ScrollView, StatusBar, Text, View} from 'react-native';
+import {ThemeProvider} from 'styled-components';
+import theme from './global/styles/theme';
 
 import {translate} from './locales';
 
 const App = () => {
-  return (
-    <SafeAreaView>
-      <StatusBar />
-      <ScrollView contentInsetAdjustmentBehavior="automatic">
-        <View>
-          <Text>{translate('hello')}</Text>
-        </View>
-      </ScrollView>
-    </SafeAreaView>
-  );
+  return <ThemeProvider theme={theme}></ThemeProvider>;
 };
 
 export default App;
